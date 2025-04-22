@@ -1,0 +1,32 @@
+.DATA
+z DW 50
+arr DB 20,21,22,23
+x DW 42
+y DB 10
+.CODE
+MOV AX, 123
+MOV BX, 6
+MOV CX, [x]
+MOV DX, [BX]
+MOV [z], AX
+MOV [y], 99
+MOV [arr], [CX]
+MOV [AX], BX
+MOV [CX], 55
+MOV [DX], [x]
+ADD AX, BX
+ADD CX, [y]
+CMP AX ,[z] 
+JMP start
+MOV BX, 10
+MOV BX, 12
+start: MOV AX, 16
+PUSH AX
+POP BX
+MOV AX, 5       
+MOV BX, 0       
+ALLOC          
+MOV CX, 42     
+MOV [ES:BX],CX
+MOV AX, [ES:BX]
+FREE             
